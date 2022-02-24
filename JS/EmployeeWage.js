@@ -1,4 +1,4 @@
-//Uc4 Ability to calculate the Daily wage and EmpHr using the function
+//Uc5 Ability to calculate the total wage and total worlking Hr in month using the function
 const Is_FullTime=1;
 const Is_PartTime=2;
 const Part_Time_Hr=4;
@@ -19,11 +19,18 @@ function getWorkingHr(empCheck)
     }
 }
 const NUM_WORKING_DAYS=20;
-for(let day=0;day<NUM_WORKING_DAYS;day++)
+const WORKING_HR_PER_MONTH=100;
+let totalWorkingDays=0;
+let totalEmpHrs=0;
+while(totalEmpHrs<=WORKING_HR_PER_MONTH && totalWorkingDays<NUM_WORKING_DAYS)
 {
+    totalWorkingDays++;
     let empCheck=Math.floor(Math.random()*10)%3;
-    empHr=empHr+getWorkingHr(empCheck);
+    console.log("WorkingDay:"+totalWorkingDays + " " + "EmpHrs :" + getWorkingHr(empCheck));
+    totalEmpHrs+=getWorkingHr(empCheck);
+
 }
- totalEmployeeWage=Working_Per_Hr*empHr;
-console.log("Total Hrs :" + empHr +"     " + "EmpWage" + totalEmployeeWage);    
+ totalEmployeeWage=Working_Per_Hr*totalEmpHrs;
+ console.log("Total Working Days"+totalWorkingDays)
+console.log("Total Hrs :" + totalEmpHrs +"     " + "EmpWage :" + totalEmployeeWage);    
 
