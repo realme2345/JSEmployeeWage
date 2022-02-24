@@ -18,19 +18,25 @@ function getWorkingHr(empCheck)
             return 0;
     }
 }
+function calculateDailyWage(empHr)
+{
+    return empHr*Working_Per_Hr;
+}
 const NUM_WORKING_DAYS=20;
-const WORKING_HR_PER_MONTH=100;
+const WORKING_HR_PER_MONTH=160;
 let totalWorkingDays=0;
 let totalEmpHrs=0;
+let empDailyWageArr=new Array();
 while(totalEmpHrs<=WORKING_HR_PER_MONTH && totalWorkingDays<NUM_WORKING_DAYS)
 {
     totalWorkingDays++;
     let empCheck=Math.floor(Math.random()*10)%3;
-    console.log("WorkingDay:"+totalWorkingDays + " " + "EmpHrs :" + getWorkingHr(empCheck));
-    totalEmpHrs+=getWorkingHr(empCheck);
-
+    empHr=getWorkingHr(empCheck);
+    //console.log("WorkingDay:"+totalWorkingDays + " " + "EmpHrs :" + getWorkingHr(empCheck));
+    totalEmpHrs+=empHr;
+    empDailyWageArr.push(calculateDailyWage(empHr));
 }
- totalEmployeeWage=Working_Per_Hr*totalEmpHrs;
- console.log("Total Working Days"+totalWorkingDays)
+totalEmployeeWage=calculateDailyWage(totalEmpHrs);
+console.log("Total Working Days"+totalWorkingDays)
 console.log("Total Hrs :" + totalEmpHrs +"     " + "EmpWage :" + totalEmployeeWage);    
 
