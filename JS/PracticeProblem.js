@@ -30,7 +30,7 @@ console.log("Feets :" + ft);
 let f1=60,f2=40;
 let RectMeter=(f1/3.28)*(f2/3.28);
 console.log("Rectangle in Meter :" + RectMeter);
-//c. Calculate area of 25 such plots in acres
+// Calculate area of 25 such plots in acres
 let ares=25;
 let acres=ares*0.0247;
 console.log("Acres :" + acres);
