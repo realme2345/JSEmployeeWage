@@ -7,8 +7,13 @@ class EmployeePayRoll
   StartDate;
 constructor(...params)
 {
-  this.Id=params[0];
-  this.Salary=params[1];
+  let regex=RegExp("^[1-9]{1,}$");
+  if(regex.test(params[0],params[1]))
+  { 
+    this.Id=params[0];
+    this.Salary=params[1];
+  }
+  else throw'please Enter Valid Number';
   this.name=params[2];
   this.Gender=params[3];
   this.StartDate=params[4];
