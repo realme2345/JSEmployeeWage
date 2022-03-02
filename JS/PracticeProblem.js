@@ -26,7 +26,7 @@ console.log("Sum of Two digit Numbers :" + result);
 let inch=42;
 let ft=inch/12
 console.log("Feets :" + ft);
-//b. Rectangular Plot of 60 feet x 40 feet in meters
+//Rectangular Plot of 60 feet x 40 feet in meters
 let f1=60,f2=40;
 let RectMeter=(f1/3.28)*(f2/3.28);
 console.log("Rectangle in Meter :" + RectMeter);
