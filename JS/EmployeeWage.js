@@ -38,7 +38,7 @@ const MAX_HRS_IN_MONTH = 160;
       dailyHours: empHrs,
       dailyWage: calculateDailyWage(empHrs),
       toString() {
-        return ("\nDay" + this.dayNum +" => Working Hours is " + this.dailyHours +" And Wage Earned = " +this.dailyWage);
+        console.log ("\nDay" + this.dayNum +" => Working Hours is " + this.dailyHours +" And Wage Earned = " +this.dailyWage);
     },
     });
   }
