@@ -67,7 +67,6 @@ const MAX_HRS_IN_MONTH = 160;
       .filter((dailyHrsAndWage) => dailyHrsAndWage.dailyHours == 4)
       .map((dailyHrsAndWage) => dailyHrsAndWage.toString());
     console.log("\nUC 11C - PartWorkingDayStrings: " + partWorkingDaysStrArr);
-  
     let nonWorkingDayNums = empDailyHrsAndWageArr
       .filter((dailyHrsAndWage) => dailyHrsAndWage.dailyHours == 0)
       .map((dailyHrsAndWage) => dailyHrsAndWage.dayNum);
