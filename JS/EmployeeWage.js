@@ -42,22 +42,11 @@ const MAX_HRS_IN_MONTH = 160;
     },
     });
   }
-  console.log(
-    "\nUC10 Showing Daily Hours Worked and Wage Earned: " +
-      empDailyHrsAndWageArr);
-      let totalWages = empDailyHrsAndWageArr
-      .filter((dailyHrsAndWage) => dailyHrsAndWage.dailyWage > 0)
-      .reduce(
-        (totalWage, dailyHrsAndWage) => (totalWage += dailyHrsAndWage.dailyWage),
-        0
-      );
-    let totalHours = empDailyHrsAndWageArr
-      .filter((dailyHrsAndWage) => dailyHrsAndWage.dailyWage > 0)
-      .reduce(
-        (totalHours, dailyHrsAndWage) =>
-          (totalHours += dailyHrsAndWage.dailyHours),
-        0
-      );
+  console.log("\nUC10 Showing Daily Hours Worked and Wage Earned: " +empDailyHrsAndWageArr);
+    let totalWages = empDailyHrsAndWageArr.filter((dailyHrsAndWage) => dailyHrsAndWage.dailyWage > 0)
+      .reduce((totalWage, dailyHrsAndWage) => (totalWage += dailyHrsAndWage.dailyWage),0);
+    let totalHours = empDailyHrsAndWageArr.filter((dailyHrsAndWage) => dailyHrsAndWage.dailyWage > 0)
+      .reduce((totalHours, dailyHrsAndWage) =>(totalHours += dailyHrsAndWage.dailyHours),0);
     console.log("\nUC 11A - Total Hours: " + totalHours + " Total Wages: " + totalWages);
     let fullTimeWorkingDaysStrArr = empDailyHrsAndWageArr
       .filter((dailyHrsAndWage) => dailyHrsAndWage.dailyHours == 8)
