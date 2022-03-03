@@ -14,7 +14,6 @@
           <div>
               <label for="text">text type for name:</label>
               <input type="text" id="text" name="text">
-              <error-output class="text-error" for="text"></error-output>
           </div>
           <div>
               <label for="pwd">Password input type:</label>
@@ -23,6 +22,7 @@
           <div>
             <label for="email"> email input type:</label>
             <input type="email" id="email" name="email">
+            <error class="text-error-email" for="email"></error>
         </div>
         <div>
             <label for="url">url input type:</label>
@@ -55,21 +55,23 @@
         </div>
       </form>
       <script>
-          const text=document.querySelector('#text');
-          const textError=document.querySelector('.text-error');
-          text.addEventListener('input',function(){
-              let nameRegex=RegExp('^[A-Z]{1}[a-z]{2,}$');
-              if(nameRegex.test(text.value))
-              textError.textContent="";
-              else
-              textError.textContent="Name is Incoreect";
-          });
-          const salary=document.querySelector('#salary');
-          const output=document.querySelector('.salary-output');
-          output.textContent=salary.value;
-          salary.addEventListener('input',function(){
-              output.textContent=salary.value;
-          });
+          var Infield = document.querySelector('#email')
+          var fielderror = document.querySelector('.text-error-email')
+          Infield.addEventListener('input', function () {
+            let nameRegex = RegExp('^[0-9a-zA-Z]+[.-_--]{0,2}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$')
+            if (nameRegex.test(Infield.value)) {
+                fielderror.textContent = "";
+                document.getElementById('email').addEventListener('input', function () {
+                    Infield.style.border = '1px solid green';
+                })
+            }
+            else {
+                fielderror.textContent = "Name is Incorrect";
+                document.getElementById('email').addEventListener('input', function () {
+                    Infield.style.border = '1px solid red';
+                })
+            }
+        });
       </script>
   </body>
 </html>
