@@ -22,7 +22,6 @@
           <div>
             <label for="email"> email input type:</label>
             <input type="email" id="email" name="email">
-            <error class="text-error-email" for="email"></error>
         </div>
         <div>
             <label for="url">url input type:</label>
@@ -31,6 +30,7 @@
         <div>
             <label for="number">number input type:</label>
             <input type="number" id="number" name="number">
+            <error class="text-error-num" for="number"></error>
         </div>
         <div>
             <label for="tel">tel input type:</label>
@@ -55,19 +55,19 @@
         </div>
       </form>
       <script>
-          var Infield = document.querySelector('#email')
-          var fielderror = document.querySelector('.text-error-email')
+          var Infield = document.querySelector('#number')
+          var fielderror = document.querySelector('.text-error-num')
           Infield.addEventListener('input', function () {
-            let nameRegex = RegExp('^[0-9a-zA-Z]+[.-_--]{0,2}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$')
+            let nameRegex = RegExp('^(?=.*[0-9])[A-Za-z0-9]{8,}$')
             if (nameRegex.test(Infield.value)) {
                 fielderror.textContent = "";
-                document.getElementById('email').addEventListener('input', function () {
+                document.getElementById('number').addEventListener('input', function () {
                     Infield.style.border = '1px solid green';
                 })
             }
             else {
-                fielderror.textContent = "Name is Incorrect";
-                document.getElementById('email').addEventListener('input', function () {
+                fielderror.textContent = "Number is Incorrect";
+                document.getElementById('number').addEventListener('input', function () {
                     Infield.style.border = '1px solid red';
                 })
             }
