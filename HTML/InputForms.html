@@ -18,6 +18,7 @@
           <div>
               <label for="pwd">Password input type:</label>
               <input type="password" id="pwd" name="pwd">
+              <error class="text-error-pwd" for="pwd"></error>
           </div>
           <div>
             <label for="email"> email input type:</label>
@@ -30,7 +31,6 @@
         <div>
             <label for="number">number input type:</label>
             <input type="number" id="number" name="number">
-            <error class="text-error-num" for="number"></error>
         </div>
         <div>
             <label for="tel">tel input type:</label>
@@ -55,19 +55,19 @@
         </div>
       </form>
       <script>
-          var Infield = document.querySelector('#number')
-          var fielderror = document.querySelector('.text-error-num')
+          var Infield = document.querySelector('#pwd')
+          var fielderror = document.querySelector('.text-error-pwd')
           Infield.addEventListener('input', function () {
-            let nameRegex = RegExp('^(?=.*[0-9])[A-Za-z0-9]{8,}$')
+            let nameRegex = RegExp('^[A-Za-z0-9]{8,}$')
             if (nameRegex.test(Infield.value)) {
                 fielderror.textContent = "";
-                document.getElementById('number').addEventListener('input', function () {
+                document.getElementById('pwd').addEventListener('input', function () {
                     Infield.style.border = '1px solid green';
                 })
             }
             else {
-                fielderror.textContent = "Number is Incorrect";
-                document.getElementById('number').addEventListener('input', function () {
+                fielderror.textContent = "Passwoed is Incorrect";
+                document.getElementById('pwd').addEventListener('input', function () {
                     Infield.style.border = '1px solid red';
                 })
             }
