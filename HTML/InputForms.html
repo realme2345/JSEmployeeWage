@@ -58,7 +58,7 @@
           var Infield = document.querySelector('#pwd')
           var fielderror = document.querySelector('.text-error-pwd')
           Infield.addEventListener('input', function () {
-            let nameRegex = RegExp('^(?=.*[0-9])[a-zA-Z0-9]{8,}$')
+            let nameRegex = RegExp('^(?=.*[A-Z])[A-Za-z0-9]{8,}$')
             if (nameRegex.test(Infield.value)) {
                 fielderror.textContent = "";
                 document.getElementById('pwd').addEventListener('input', function () {
